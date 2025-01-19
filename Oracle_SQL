@@ -1,0 +1,59 @@
+I am Writing the commands in the lines
+
+> Start Oracle 
+    First check the oracle service
+    make it running if it is disabled
+
+> in terminal Type 
+    sqlplus / as dba 
+
+> Create a User by this command 
+
+    List all the users - 
+        SELECT username FROM all_users;
+
+    CREATE USER new_user IDENTIFIED BY new_password;
+    GRANT CONNECT, RESOURCE TO new_user;
+
+> Logging to the User
+
+    sqlplus new_user/new_password
+
+> View all the Tables 
+
+    SELECT table_name FROM user_tables;
+
+> Make Table - 
+    
+    CREATE TABLE table_name (               
+    column1 datatype constraint,
+    column2 datatype constraint
+    );
+
+    EX - 
+    CREATE TABLE students (
+    st_id INT PRIMARY KEY,
+    st_name VARCHAR(50),
+    st_age INT NOT NULL
+    );
+
+    + you can view all the tables 
+
+        SELECT table_name FROM dba_tables;
+
+    + You can insert data - 
+    
+        INSERT INTO students VALUES (1, 'Alice', 95);
+
+> GRANT & users
+
+    ALTER USER C##VOOB QUOTA UNLIMITED ON USERS;
+
+
+> PL SQL 
+    to run it - 
+    - Make a sql file (Test.sql)
+    - Write PL sql 
+    - Terminal sqlplus / as sysdba 
+    SET SERVEROUTPUT ON
+    @Test.sql
