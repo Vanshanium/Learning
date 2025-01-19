@@ -45,6 +45,9 @@ I am Writing the commands in the lines
     
         INSERT INTO students VALUES (1, 'Alice', 95);
 
+>To alter the table 
+    ALTER TABLE table_name RENAME COLUMN old_column_name TO new_column_name;
+
 > GRANT & users
 
     ALTER USER C##VOOB QUOTA UNLIMITED ON USERS;

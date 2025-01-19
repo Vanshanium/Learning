@@ -1,30 +1,20 @@
-CREATE TABLE students (
-    student_id NUMBER PRIMARY KEY,
-    student_name VARCHAR2(50),
-    marks NUMBER
-);
+-- CREATE OR REPLACE PROCEDURE find_topper AS
+--     topper_name VARCHAR(50);
+--     topper_marks NUMBER;
+-- BEGIN
+--     SELECT st_name, marks
+--     INTO topper_name, topper_marks
+--     FROM students
+--     WHERE marks = (SELECT MAX(marks) FROM students);
+    
+--     DBMS_OUTPUT.PUT_LINE('Topper: ' || topper_name || ' with marks: ' || topper_marks);
+-- END;
+-- /
 
-INSERT INTO students VALUES (1, 'Alice', 95);
-INSERT INTO students VALUES (2, 'Bob', 89);
-INSERT INTO students VALUES (3, 'Charlie', 97);
-
-COMMIT;
 
 
-
-DECLARE
-
-    pika INT;
-
-BEGIN
-
-    pika := 0;
-
-    LOOP
-        DBMS_OUTPUT.PUT_LINE(pika);
-            pika := pika + 1;
-    EXIT WHEN pika > 5;
-    END LOOP;
+BEGIN 
+    find_topper;
 
 END;
 /
