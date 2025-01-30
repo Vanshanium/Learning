@@ -4,16 +4,73 @@ I am Writing the commands in the lines
     First check the oracle service
     make it running if it is disabled
 
-> in terminal Type 
-    sqlplus / as dba 
+    Now oracle have CDB ( container databases) and PDB (pluggable databases)
 
-> Create a User by this command 
+    -- SHOW PDBMS
+    --ALTER SESSION SET CONTAINER=PDB_NAME;
+
+    > in terminal Type 
+        sqlplus / as sysdba 
+    > To clear the sql terminal use 
+            
+            CLEAR SCREENsql 
+            
+> Creating a User
 
     List all the users - 
         SELECT username FROM all_users;
 
     CREATE USER new_user IDENTIFIED BY new_password;
-    GRANT CONNECT, RESOURCE TO new_user;
+    DEFAULT TABLESPACE users   // This is for the tables the user will Create
+    TEMPORARY TABLESPACE temp  // This is for the operations done on the table 
+    QUOTA 100M ON users;        // The space given to the user.
+
+
+    > Delete the user by 
+
+        DROP USER username;
+        DROP USER username CASCADE; // Everything they had
+        
+    > Granting Permissions 
+
+        GRANT ANYTHING TO new_user;
+
+        These are the common system privileges
+               
+                CREATE TABLE	Allows a user to create tables.
+                CREATE VIEW	Allows a user to create views.
+                CREATE SEQUENCE	Allows a user to create sequences.
+                CREATE PROCEDURE	Allows a user to create stored procedures and functions.
+                CREATE SYNONYM	Allows a user to create synonyms for objects.
+                CREATE USER	Allows a user to create other database users.
+                ALTER USER	Allows a user to modify other users.
+                DROP USER	Allows a user to remove users from the database.
+                GRANT ANY PRIVILEGE	Allows a user to grant privileges to others.
+                UNLIMITED TABLESPACE	Allows a user unlimited usage of tablespace.
+                CREATE ANY TABLE	Allows a user to create tables in any schema.
+                DROP ANY TABLE	Allows a user to drop tables in any schema.
+                ALTER ANY TABLE	Allows a user to alter tables in any schema.
+                SELECT ANY TABLE	Allows a user to query any table.
+                UPDATE ANY TABLE	Allows a user to update any table.
+                DELETE ANY TABLE	Allows a user to delete from any table.
+                INSERT ANY TABLE	Allows a user to insert into any table.
+
+        These are the common Object privileges
+
+                SELECT	Allows reading data from a table, view, or synonym.
+                INSERT	Allows inserting new rows into a table.
+                UPDATE	Allows modifying existing rows in a table.
+                DELETE	Allows deleting rows from a table.
+                ALTER	Allows altering table structure.
+                INDEX	Allows creating an index on a table.
+                REFERENCES	Allows referencing columns in foreign key constraints.
+                EXECUTE	Allows executing a stored procedure or function.
+                DEBUG	Allows debugging stored procedures.
+
+        // Give direct roles which have all or some of the privileges 
+
+        GRANT CONNECT, RESOURCE TO user_name; // The command for connect (session) and resource (tablespace)
+        GRANT DBA TO admin_user;
 
 > Logging to the User
 
@@ -23,23 +80,29 @@ I am Writing the commands in the lines
 
     SELECT table_name FROM user_tables;
 
-> Make Table - 
+>> SQL 
+
+    see the Cheat sheet from ./Source_Material/Sql_Cheat_Sheet.png
+
+> DDl Commands (data design commands)
+
+    + Create [With this you can create tables]
+
+        CREATE TABLE table_name (
+            column1 datatype,
+            column2 datatype,
+            ...
+            PRIMARY KEY (column1, column2)
+        );
+
+    + you can view all the tables for a user
+
+        SELECT table_name FROM user_tables;
+        SELECT table_name FROM dba_tables; // for all the tables on the dba
+
+    + See the structure 
+        DESCRIBE student_table;
     
-    CREATE TABLE table_name (               
-    column1 datatype constraint,
-    column2 datatype constraint
-    );
-
-    EX - 
-    CREATE TABLE students (
-    st_id INT PRIMARY KEY,
-    st_name VARCHAR(50),
-    st_age INT NOT NULL
-    );
-
-    + you can view all the tables 
-
-        SELECT table_name FROM dba_tables;
 
     + You can insert data - 
     
@@ -47,10 +110,6 @@ I am Writing the commands in the lines
 
 >To alter the table 
     ALTER TABLE table_name RENAME COLUMN old_column_name TO new_column_name;
-
-> GRANT & users
-
-    ALTER USER C##VOOB QUOTA UNLIMITED ON USERS;
 
 
 > PL SQL 
