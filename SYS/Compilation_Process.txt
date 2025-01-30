@@ -1,0 +1,45 @@
+The Compilation works on these steps : 
+ -- http://youtube.com/watch?v=N2y6csonII4
+
+
+1. Preprocessing - 
+
+    Command - gcc -E ./test.c -o ./test.i
+
+    Header File Inclusion (#include):
+
+        #include <stdio.h>
+        is replaced with the full content of the stdio.h file.
+    
+    Macro Substitution (#define):
+
+        #define PI 3.14159
+        Replaces all occurrences of PI with 3.14159.
+
+    Conditional Compilation (#ifdef, #ifndef):
+
+        #ifdef DEBUG
+            printf("Debug mode\n");
+        #endif
+    
+    Removing Comments:
+
+        All comments (both single-line // and multi-line /* */) are removed.
+
+2. Compiler - 
+
+    Compiles the code into assembly 
+    Command - gcc -S ./test.c -o test.s
+
+3. Assembler - 
+
+    Here the assembler converts the code into object code.
+    
+    Command - gcc -c ./test.c -o ./test.o
+
+4. Linker 
+    
+    The linker then links all the other object files from the libraries into executable 
+
+    Command - gcc ./test.c -o ./test
+    
