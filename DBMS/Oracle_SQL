@@ -13,7 +13,10 @@ I am Writing the commands in the lines
         sqlplus / as sysdba 
     > To clear the sql terminal use 
             
-            CLEAR SCREENsql 
+            CLEAR SCREEN
+
+    COMMIT; 
+    do it to save the inserted data.
             
 > Creating a User
 
@@ -106,6 +109,8 @@ I am Writing the commands in the lines
             + Adding a Column 
                 ALTER TABLE table_name ADD column_name type contraint;
 
+
+
             + Deleting a column
                 ALTER TABLE table_name DROP COLUMN column_name; 
 
@@ -118,7 +123,35 @@ I am Writing the commands in the lines
                 ADD PRIMARY KEY (stud_id);  
                 DROP PRIMARY KEY -- ONLY WAY IT REMOVES ALL THE KEYS
 
+            ALTER TABLE table_name MODIFY column_name new_datatype;
 
+            ALTER TABLE subject_table RENAME COLUMN teacher_id TO teach_id;
+
+        + DROP [Deletes all the files] 
+                
+            DROP TABLE table_name;
+            ALTER TABLE table_name DROP COLUMN column_name;
+
+        + TRUNCATE [delete the data in the table]
+            TRUNCATE TABLE student_table;   
+
+    > DML Commands (Data Manupilation Language commands) 
+
+        + INSERT
+            
+            INSERT INTO table_name(name , name , name) 
+            VALUES 
+            (data, "data", data),
+            (Data, data, everywhere);
+        
+            using Substitution Variables (&)
+
+                INSERT INTO table_name(&colum_name, &colum_name, &colum_name)
+                
+
+        
+        
+        + 
 
 > PL SQL 
     to run it - 

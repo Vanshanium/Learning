@@ -1,1 +1,4 @@
-ALTER TABLE subject_table ADD PRIMARY KEY (sub_id);
+CLEAR SCREEN
+
+-- SELECT teach_id, class_id FROM subjects_table;
+-- SELECT table_name FROM user_tables;
