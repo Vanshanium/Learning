@@ -76,40 +76,48 @@ I am Writing the commands in the lines
 
     sqlplus new_user/new_password
 
-> View all the Tables 
-
-    SELECT table_name FROM user_tables;
-
 >> SQL 
 
     see the Cheat sheet from ./Source_Material/Sql_Cheat_Sheet.png
+    In oracle you can only make one database per user alike mysql.
 
-> DDl Commands (data design commands)
+    > DDl Commands (data design commands)
 
-    + Create [With this you can create tables]
+        + Create [With this you can create tables]
 
-        CREATE TABLE table_name (
-            column1 datatype,
-            column2 datatype,
-            ...
-            PRIMARY KEY (column1, column2)
-        );
+            CREATE TABLE table_name (
+                column1 datatype,
+                column2 datatype,
+                ...
+                PRIMARY KEY (column1, column2)
+            );
 
-    + you can view all the tables for a user
+            + you can view all the tables for a user
 
-        SELECT table_name FROM user_tables;
-        SELECT table_name FROM dba_tables; // for all the tables on the dba
+                SELECT table_name FROM user_tables;
+                SELECT table_name FROM dba_tables; // for all the tables on the dba
 
-    + See the structure 
-        DESCRIBE student_table;
-    
+            + See the structure 
+                DESCRIBE student_table;
 
-    + You can insert data - 
-    
-        INSERT INTO students VALUES (1, 'Alice', 95);
+        + ALTER [With this u can change the tables schema]
 
->To alter the table 
-    ALTER TABLE table_name RENAME COLUMN old_column_name TO new_column_name;
+
+            + Adding a Column 
+                ALTER TABLE table_name ADD column_name type contraint;
+
+            + Deleting a column
+                ALTER TABLE table_name DROP COLUMN column_name; 
+
+            + If u want to add constraints (Primary Key and stuff!) 
+
+                ALTER TABLE table_name
+                ADD CONSTRAINT colum_name; 
+
+                ALTER TABLE student_table 
+                ADD PRIMARY KEY (stud_id);  
+                DROP PRIMARY KEY -- ONLY WAY IT REMOVES ALL THE KEYS
+
 
 
 > PL SQL 
