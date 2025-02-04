@@ -84,6 +84,18 @@ I am Writing the commands in the lines
     see the Cheat sheet from ./Source_Material/Sql_Cheat_Sheet.png
     In oracle you can only make one database per user alike mysql.
 
+
+    Source - https://www.scaler.com/topics/dml-commands-in-sql/
+    
+    Category	                                Description                                     Examples
+
+    DDL (Data Definition Language)	            Defines and modifies database structure	        CREATE, ALTER, DROP, TRUNCATE, COMMENT, RENAME
+    DML (Data Manipulation Language)	        Modifies and retrieves data within tables	    INSERT, UPDATE, DELETE, MERGE, SELECT...FOR UPDATE
+    TCL (Transaction Control Language)	        Manages transactions in the database	        COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION
+    DCL (Data Control Language)	                Manages permissions and access control          GRANT, REVOKE
+    DQL (Data Query Language)	                Retrieves data from the database	            SELECT JOIN
+
+
     > DDl Commands (data design commands)
 
         + Create [With this you can create tables]
@@ -148,10 +160,19 @@ I am Writing the commands in the lines
 
                 INSERT INTO table_name(&colum_name, &colum_name, &colum_name)
                 
+        + UPDATE (To update any inserted value)
 
-        
-        
-        + 
+            UPDATE table_name  
+            SET column1 = value1, column2 = value2, ...  
+            WHERE condition;
+
+            UPDATE student_table
+            SET name='Rakesh Lockhart', parent_name = 'Dropadhi Amsterdam'
+            WHERE name='Ramesh Lockhart';
+
+        + DELETE 
+            DELETE FROM student_table 
+            WHERE std_id IN (SELECT std_id FROM student_table WHERE class_id=12);
 
 > PL SQL 
     to run it - 
