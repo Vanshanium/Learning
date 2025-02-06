@@ -84,6 +84,20 @@ I am Writing the commands in the lines
     see the Cheat sheet from ./Source_Material/Sql_Cheat_Sheet.png
     In oracle you can only make one database per user alike mysql.
 
+        Operator Type   	    Operators
+
+        Arithmetic Operators	+, -, *, /, MOD()
+        Comparison Operators	=, !=, <>, >, <, >=, <=
+        Range Operator	        BETWEEN ... AND ...
+        Set Membership	        IN, NOT IN
+        Pattern Matching	    LIKE
+        Null Checking	        IS NULL, IS NOT NULL
+        Logical Operators	    AND, OR, NOT
+        String Concatenation	`
+        Bitwise Operators	    BITAND() (Oracle does not support &, `
+        Set Operators	        UNION, UNION ALL, INTERSECT, MINUS
+        Existence Checking	    EXISTS, NOT EXISTS
+
 
     Source - https://www.scaler.com/topics/dml-commands-in-sql/
     
@@ -135,6 +149,8 @@ I am Writing the commands in the lines
                 ADD PRIMARY KEY (stud_id);  
                 DROP PRIMARY KEY -- ONLY WAY IT REMOVES ALL THE KEYS
 
+            
+
             ALTER TABLE table_name MODIFY column_name new_datatype;
 
             ALTER TABLE subject_table RENAME COLUMN teacher_id TO teach_id;
@@ -146,6 +162,10 @@ I am Writing the commands in the lines
 
         + TRUNCATE [delete the data in the table]
             TRUNCATE TABLE student_table;   
+
+        + RENAME      
+            RENAME student_table TO students_table;
+
 
     > DML Commands (Data Manupilation Language commands) 
 
@@ -173,6 +193,57 @@ I am Writing the commands in the lines
         + DELETE 
             DELETE FROM student_table 
             WHERE std_id IN (SELECT std_id FROM student_table WHERE class_id=12);
+
+        + SELECT 
+
+            SELECT parent_name AS owners, name AS slaves FROM student_table 
+            WHERE class_id = 10 AND section = 'A'
+            ORDER BY name ASC;
+
+            - Using FETCH (limit in mysql)
+
+                select * FROM table
+                FETCH FIRST 5 ROWS ONLY;    OR    OFFSET 5 FETCH NEXT 5 ONLY;
+
+                in Mysql - 
+
+                SELECT * FROM student_table LIMIT 5;
+
+                SELECT * FROM table LIMIT 5 OFFSET 5;  
+
+                SELECT 
+                student_table.name AS Student_Name, teacher_table.name AS teacher_name
+                FROM student_table
+                JOIN subjects_table
+                ON student_table.class_id = subjects_table.class_id
+                JOIN teacher_table ON teacher_table.t_id = subjects_table.teach_id
+                WHERE student_table.name = 'Jesus'
+                ORDER BY Student_Name ASC;
+
+    > Views in SQL
+
+        Views are the Virtual Tables created out of queries
+        for Secure,Simplicity,Reusable and abstraction 
+
+        CREATE VIEW class_10 AS
+        SELECT * FROM student_table
+        WHERE class_id = 10
+        ORDER BY name ASC;
+
+        SELECT view_name FROM user_views;
+
+        > Create or replace is for making new something without deleting the design and recreating.
+
+            CREATE OR REPLACE object_name AS 
+            .....
+
+            For View - 
+
+            CREATE OR REPLACE VIEW view_name AS 
+            SELECT * FROM table_name
+            ......;
+        
+
 
 > PL SQL 
     to run it - 
