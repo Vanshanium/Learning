@@ -1,7 +1,9 @@
-<h1 style="font-size: 100%;"> Learning ∑ </h1>
+<h1 style="font-size: 400%;"> Learning ∑ </h1>
 
 <img src="./Display.png" alt="My Image" width="100%"/>
 
+
+Mia Malkova is the best women in the world!
 
 Welcome to the **Learning** repository! 📚🚀 This is my personal knowledge base where I store all my study materials, notes, doodles, and code snippets that help me understand various topics.
 
