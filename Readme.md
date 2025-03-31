@@ -1,9 +1,6 @@
-# Learning ∑
+<h1 style="font-size: 200%;">∑ Learning Repository</h1>
 
 <img src="./Display.png" alt="My Image" width="100%"/>
-
-
-
 
 
 Welcome to the **Learning** repository! 📚🚀 This is my personal knowledge base where I store all my study materials, notes, doodles, and code snippets that help me understand various topics.
