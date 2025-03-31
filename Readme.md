@@ -15,9 +15,9 @@ This repository is an organized collection of Subjects I have been Working on, T
 ```
 Learning/
 
-    |-- 📁 DSA/           
-    |-- 📁 DBMS/         
-    |-- 📁 LowLvl/        
+    |-- 📁 DSA/             # For Understanding DataStructure (My methods!)
+    |-- 📁 DBMS/            # For Databases and SQL & PLSql 
+    |-- 📁 LowLvl/          # For Low Level Learning
 
 ```
 
