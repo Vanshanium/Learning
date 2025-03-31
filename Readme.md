@@ -1,4 +1,4 @@
-<h1 style="font-size: 200%; color:rgb(37, 144, 163);"> Learning ∑ </h1>
+<h1 style="font-size: 100%;"> Learning ∑ </h1>
 
 <img src="./Display.png" alt="My Image" width="100%"/>
 
