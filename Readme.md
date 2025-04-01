@@ -6,7 +6,7 @@
 
 ___
 
- Welcome to the **Learning** repository! This is my personal knowledge base where I store all my study materials, notes, doodles, and code snippets that help me understand various topics. I try to go in depth of the Topic, and Try to find or Write everything related to it!
+ Welcome to the **Learning** repository! This is my personal knowledge base where I store all my study materials, notes, doodles,Code snippets and Projects that help me understand various topics. I try to go in depth of the Topic, and Try to find or Write everything related to it!
 
 
 ## About This Repository
@@ -18,6 +18,7 @@ Learning/
     |-- 📁 DSA/             # For Understanding DataStructure (My methods!)
     |-- 📁 DBMS/            # For Databases and SQL & PLSql 
     |-- 📁 LowLvl/          # For Low Level Learning
+    |-- 📁 Automate/        # Python Scripting for automation.
 
 ```
 
