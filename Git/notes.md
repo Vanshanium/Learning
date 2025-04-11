@@ -42,9 +42,9 @@ git rebase upstream/main           # Rebase local on top of upstream
 ### 🌲 Git Remotes
 
 ```bash
-git remote -v                      # Show all remotes
-git remote add upstream <url>     # Add upstream (main/original repo)
-git fetch upstream                 # Fetch upstream changes
+git remote -v                       # Show all remotes
+git remote add upstream <url>       # Add upstream (main/original repo) // Upsteam is original remote from which the repo is forked
+git fetch upstream                  # Fetch upstream changes
 ```
 
 ---
@@ -73,3 +73,7 @@ git stash pop                      # Reapply stashed changes
 ---
 
 📁 *Keep updating this file as you learn more!*
+
+
+
+
