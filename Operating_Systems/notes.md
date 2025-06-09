@@ -65,14 +65,33 @@ Distributed Operating Systems manage a group of independent computers and make t
     <img src="./Assets/Component.webp" alt="Distributed OS" style="width: 100%; border-radius: 10px;">
 </div>
 
-### System Calls
+### [System Calls](https://www.youtube.com/watch?v=H4SDPLiUnv4)
 
 <div align="center">
     <img src="./Assets/syscall.webp" alt="Distributed OS" style="width: 60%; border-radius: 10px;">
 </div>
+
 System calls provide the interface between user applications and the operating system kernel. They allow user-level processes to request services(Hardware operations) such as file operations, process control, and communication from the OS.
 
+- They are just API to Hardware.
 - A system call makes a interupt(switch of CPU mode), which grants the control of the process to OS so it can use hardware.
 - Examples: `read()`, `write()`, `fork()`, `exec()`, `open()`, `close()`
 - System calls are essential for security and stability, as they prevent direct hardware access by user programs.
 - They can cause compatibility problems like windows have different systemcalls and linux have different.
+
+
+# [Kernal vs Operating System - ](https://www.geeksforgeeks.org/difference-between-operating-system-and-kernel/)
+Kernal is a part of the Operating System, there are different types of kernal on the basis of how much work of Operating system is done by kernal.
+
+[Here](https://www.geeksforgeeks.org/kernel-in-operating-system/)
+
+![Kernel vs Operating System](./Assets/Linux_Kernal_Diagram.svg)
+
+# [Shell](./Shell.md)
+Shell are the Command line interface between Kernal and the User.There are different shells out there - 
+bash, powershell,zsh, fish etc.
+
+
+
+
+

@@ -24,3 +24,4 @@ Locking Mechanism
 ## Samaphores 
 They work on Locking Mechanism, It is just a integer value used to get in and out of the Critical Section.
 Read this [article on semaphores](https://preshing.com/20150316/semaphores-are-surprisingly-versatile/).
+
