@@ -91,7 +91,59 @@ Kernal is a part of the Operating System, there are different types of kernal on
 Shell are the Command line interface between Kernal and the User.There are different shells out there - 
 bash, powershell,zsh, fish etc.
 
+# Files : 
+In linux everything is a file, if its a directory that means it is a file. a symbolic link everything is a file. 
+opposite to file is a Process.
+
+## File Permission - 
+
+![file](./Assets/Linux_file_permissions.png)
+
+you can change the permissions using - 
+```bash
+    chmod u+r ./file_name 
+    # chmod u/g/o +/- r/w/x 
+```
+
+## Type of files - 
+        -: Regular file
+        d: Directory
+        l: Symbolic link
+        c: Character device file
+        b: Block device file
+        p: Named pipe (FIFO)
+        s: Sockets
 
 
+# [File System :](https://web.cs.wpi.edu/~rek/DCS/D04/UnixFileSystems.html)
+The disk Partitions are called file system. Use `dumpe2fs` to get the file system information. 
 
+## Types of File System Blocks in Linux
 
+A Linux file system organizes data on disk using several types of blocks, each serving a specific purpose:
+
+### 1. Boot Block
+- Located at the very beginning of the file system.
+- Contains the boot loader or code required to boot the operating system.
+- Only present in bootable partitions.
+
+### 2. Super Block
+- Stores critical information about the file system, such as:
+    - File system type
+    - Size
+    - Status
+    - Metadata about other blocks (e.g., number of inodes, data blocks)
+- Essential for mounting and managing the file system.
+
+### 3. Inode Block
+- Contains inodes, which store metadata about files and directories:
+    - File type, permissions, owner, timestamps
+    - Pointers to data blocks
+- Each file or directory has a unique inode.
+
+### 4. Data Block
+- Stores the actual contents of files and directories.
+- Most of the disk space is allocated to data blocks.
+- Inodes point to these blocks to access file data.
+
+These blocks together enable efficient storage, retrieval, and management of files in Linux file systems.

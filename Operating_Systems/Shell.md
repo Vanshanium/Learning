@@ -6,6 +6,7 @@ bash, powershell, zsh, fish etc.
 
 - `pwd` - Print working directory
 - `ls` - List directory contents
+- `file` -  Gives the detail of the file.
 - `cd` - Change directory
 - `mkdir` - Make new directory
 - `rmdir` - Remove empty directory
