@@ -79,6 +79,83 @@ System calls provide the interface between user applications and the operating s
 - System calls are essential for security and stability, as they prevent direct hardware access by user programs.
 - They can cause compatibility problems like windows have different systemcalls and linux have different.
 
+# Process Management:
+
+## Process - 
+Program while execution is called a Process. 
+
+![Process Illustration](./Assets/Process_States.jpg)
+
+## States of a Process
+
+A process in an operating system goes through different states during its lifecycle. The five primary states are:
+
+1. **New**: The process is being created and has not yet been admitted to the pool of executable processes.
+2. **Ready**: The process is loaded into main memory and is waiting to be assigned to a CPU for execution.
+3. **Running**: The process is currently being executed by the CPU.
+4. **Waiting (Blocked)**: The process cannot proceed until some event occurs (such as completion of I/O or receipt of a signal).
+5. **Terminated**: The process has finished execution and is being removed from the system.
+
+## Process Control Block 
+A Process Control Block (PCB) is a data structure used by the operating system to store all information about a process.
+
+- The PCB is crucial for context switching.
+
+![Process Control Block](./Assets/Process_control_block.webp)
+
+## Process Schedulling 
+Process scheduling is the method by which the operating system decides the order in which processes access the CPU.
+
+### Process Queues
+
+Operating systems use different queues to manage processes at various stages:
+
+- **Job Queue**: Contains all processes in the system. When a process is created, it enters the job queue.
+- **Ready Queue**: Holds processes that are loaded in main memory and are ready to run, waiting for CPU allocation.
+- **I/O Queue**: Contains processes waiting for I/O operations to complete (like disk or network access).
+
+![Process Queues](./Assets/Process_Scheulling.jpg)
+![Context Switching](./Assets/Context_Switching.png)
+
+### Category of Process Schedulling: 
+#### Preemptive vs Non-Preemptive Scheduling
+
+- **Preemptive Scheduling**: The operating system can interrupt and suspend a currently running process to assign the CPU to another process. This allows better responsiveness and ensures that high-priority tasks are served quickly. Examples include Round Robin and Priority Scheduling (preemptive).
+
+- **Non-Preemptive Scheduling**: Once a process starts executing, it runs to completion or until it voluntarily yields the CPU (e.g., waiting for I/O). The OS does not forcibly take away the CPU from a running process. Examples include First-Come, First-Served (FCFS) and Shortest Job First (non-preemptive).
+
+Preemptive scheduling is generally preferred in time-sharing systems, while non-preemptive is simpler and used in batch systems.
+
+#### Types of Schedulers
+---
+Operating systems use three main types of schedulers to manage processes at different stages:
+
+1. **Long-Term Scheduler (Job Scheduler):**
+    - Decides which processes are admitted from the job pool (secondary storage) into the ready queue (main memory).
+    - Controls the degree of multiprogramming (number of processes in memory).
+    - Invoked less frequently than other schedulers.
+    - If too many processes are admitted, the system may become overloaded.
+
+2. **Short-Term Scheduler (CPU Scheduler):**
+    - Selects which process in the ready queue will be executed next by the CPU.
+    - Runs very frequently (milliseconds).
+    - Responsible for context switching between processes.
+
+3. **Medium-Term Scheduler (Swapper):**
+    - Manages the swapping of processes in and out of main memory to control the mix of CPU-bound and I/O-bound processes.
+    - Suspends and resumes processes by moving them between main memory and secondary storage.
+    - Helps improve process mix and system performance, especially in systems with limited memory.
+
+### Process Operations 
+#### Creation of a Process
+
+A process can be created by another process using system calls such as `fork()` (in Unix/Linux) or `CreateProcess()` (in Windows). The creating process is called the **parent**, and the new process is the **child**.
+
+#### Termination of a Process
+
+A process is terminated when it has completed its execution or is explicitly killed by the operating system or another process.
+
+#### InterProcess Communication
 
 # [Kernal vs Operating System - ](https://www.geeksforgeeks.org/difference-between-operating-system-and-kernel/)
 Kernal is a part of the Operating System, there are different types of kernal on the basis of how much work of Operating system is done by kernal.

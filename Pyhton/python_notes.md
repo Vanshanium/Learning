@@ -1,21 +1,93 @@
 # 🐍 Python Notes
 
-## 🧱 Basics
+## 1. Basics
 
-```python
-# Print something
-print("Hello, World!")  # Output: Hello, World!
+### Variables
+You know what are they, you just need `=` assignment operator, to assign variable.
 
-# Variables
-x = 10                  # Integer
-name = "Alice"          # String
-pi = 3.14               # Float
-is_valid = True         # Boolean
+```python 
+    x = 10                  # Integer
+    name = "Alice"          # String
+    pi = 3.14               # Float
+    is_valid = True         # Boolean
+
+    # Multi Assignment: 
+
+    x,y,z = 1,2,3 
+    x = y = z = 1 
+
 ```
+
+### Operators:
+
+#### 1. Arithmetic Operators
+
+Used to perform mathematical operations.
+
+| Operator | Description             | Example         |
+|----------|-------------------------|-----------------|
+| +        | Addition                | 5 + 2 = 7       |
+| -        | Subtraction             | 5 - 2 = 3       |
+| *        | Multiplication          | 5 * 2 = 10      |
+| /        | Division (float)        | 5 / 2 = 2.5     |
+| //       | Floor Division          | 5 // 2 = 2      |
+| %        | Modulus (Remainder)     | 5 % 2 = 1       |
+| **       | Exponentiation          | 5 ** 2 = 25     |
+
+#### 2. Comparison (Relational) Operators
+
+Used to compare two values and return a boolean result.
+
+| Operator | Meaning                  | Example              |
+|----------|--------------------------|----------------------|
+| ==       | Equal to                 | 5 == 2 → False       |
+| !=       | Not equal to             | 5 != 2 → True        |
+| >        | Greater than             | 5 > 2 → True         |
+| <        | Less than                | 5 < 2 → False        |
+| >=       | Greater than or equal to | 5 >= 2 → True        |
+| <=       | Less than or equal to    | 5 <= 2 → False       |
+
+#### 3. Logical Operators
+
+Used to combine conditional statements.
+
+| Operator | Meaning      | Example                          |
+|----------|-------------|----------------------------------|
+| and      | Logical AND | (5 > 2) and (5 < 10) → True      |
+| or       | Logical OR  | (5 < 2) or (5 < 10) → True       |
+| not      | Logical NOT | not (5 > 2) → False              |
+
+#### 4. Assignment Operators
+
+Used to assign values to variables.
+
+| Operator | Example    | Equivalent      |
+|----------|------------|----------------|
+| =        | x = 5      | x = 5          |
+| +=       | x += 3     | x = x + 3      |
+| -=       | x -= 3     | x = x - 3      |
+| *=       | x *= 3     | x = x * 3      |
+| /=       | x /= 3     | x = x / 3      |
+| //=      | x //= 3    | x = x // 3     |
+| %=       | x %= 3     | x = x % 3      |
+| **=      | x **= 3    | x = x ** 3     |
+
+#### 5. Bitwise Operators
+
+Operate on bits (binary level).
+
+| Operator | Name        | Example           |
+|----------|-------------|-------------------|
+| &        | AND         | 5 & 3 = 1         |
+| \|       | OR          | 5 \| 3 = 7        |
+| ^        | XOR         | 5 ^ 3 = 6         |
+| ~        | NOT (invert)| ~5 = -6           |
+| <<       | Left Shift  | 5 << 1 = 10       |
+| >>       | Right Shift | 5 >> 1 = 2        |
 
 ---
 
-## 🧮 Data Types
+### Data Types
 
 ```python
 # Lists
@@ -33,7 +105,7 @@ person = {"name": "Alice", "age": 25}  # Key-value pairs
 
 ---
 
-## 🔁 Control Flow
+## 3. Control Flow
 
 ```python
 # Conditional statements
@@ -55,7 +127,7 @@ while x > 0:                       # While loop
 
 ---
 
-## 🔧 Functions
+## 4. Functions
 
 ```python
 # Define a function
@@ -118,9 +190,9 @@ function_caller(lambda a : print(f"{a} is a Moron"))
 Learn about Decorators from this: [Here](https://www.youtube.com/watch?v=ZwMS3_Ej_6M&ab_channel=SkillBakeryStudio)
 ---
 
-# 🎒 Classes and Oops
+# 5. Classes and OOP
 
-[Refrence](https://www.youtube.com/watch?v=rLyYb7BFgQI&ab_channel=Indently)
+[Reference](https://www.youtube.com/watch?v=rLyYb7BFgQI&ab_channel=Indently)
 
 ```python
 # Define a class
@@ -143,13 +215,13 @@ class Man(Person):   # This is Inherited from the Person.
 
 
 # Create object
-p = Man("Alice", 25,12)
+p = Man("Alice", 25,12)w
 print(greet()) 
 
 ```
 
-## Dunder Methods (Double Underscore Methods/Magic mathods) 
-They are special/magic methods in the classes for basic Fucntionality and Operators [see](https://www.youtube.com/watch?app=desktop&v=NwjSP1_WEfE&ab_channel=BroCode)
+## Dunder Methods (Double Underscore Methods/Magic methods) 
+They are special/magic methods in the classes for basic functionality and operators [see](https://www.youtube.com/watch?app=desktop&v=NwjSP1_WEfE&ab_channel=BroCode)
 
 ```python
 class Person:
@@ -164,12 +236,9 @@ print(p)  # Output: Person named Alice
 ```
 ![Image](./Reference_Images/Dunder_Mathods.webp)
 
-
-
-
 ---
 
-# Exception handling
+# 6. Exception Handling
 
 ```python
 try:
@@ -178,7 +247,7 @@ except ZeroDivisionError:
     print("You can't divide by zero!")
 ```
 
-# *Args and **Kargs
+# 7. *Args and **Kargs
 
 In Python, `*args` and `**kwargs` are used in function definitions to handle **variable numbers of arguments**.
 
@@ -207,11 +276,10 @@ print_info(name="Alice", age=25, country="Wonderland")
 
 ```
 
-# Virtual Envirment: 
+# 8. Virtual Environment
 
-They are Envirments that encapsulate a Python Project! So you can Freeze the Dependencies and all.
-they makes a new Python Interpretor in the Virtual Envirnment.
-
+They are environments that encapsulate a Python project so you can freeze the dependencies and all.
+They make a new Python interpreter in the virtual environment.
 
 ## Creating a Virtual Environment
 
@@ -220,29 +288,97 @@ With the built-in `venv` module (Python 3.3+):
 ```bash
 python -m venv venv
 ```
-Then Activate the New Interpretor (Set the Interpretor in the Editor aswell!)
+Then activate the new interpreter (set the interpreter in the editor as well!)
 
-on Windows: 
+On Windows: 
 
 ```bash 
 venv\Scripts\activate
 ```
-On Linux 
+On Linux: 
 
 ```bash
 source venv/bin/activate
 ```
 
-# UV (Package and Project Manager) 
+# 9. UV (Package and Project Manager) 
 
 ```bash
-    uv init project_name
-    uv venv
-    source ./venv/bin/activate
-    
-    uv pip install package
+uv init project_name
+uv venv
+source ./venv/bin/activate
 
+uv pip install package
 ```
 
+# 10. Files 
 
+You can open a file or make a python object of the file using open(), which is a constructor that makes an instance of a `_io.TextWrapper` class.  
+Example:
 
+```python
+my_file = open("/path/to/the/file","mode")
+```
+
+All the modes: 
+
+![File Modes Reference](./Reference_Images/file_modes.webp)
+
+## Attributes and Methods: 
+
+## File Object Methods & Attributes
+
+### 1. Reading Functions
+
+| Method                | Description                                                      |
+|-----------------------|------------------------------------------------------------------|
+| `read(size=-1)`       | Reads `size` characters (or entire file if `-1`)                 |
+| `readline(size=-1)`   | Reads a single line (up to optional `size` bytes)                |
+| `readlines(hint=-1)`  | Reads all lines into a list (can limit total bytes with `hint`)  |
+| `readable()`          | Returns `True` if file is open for reading                       |
+
+### 2. Writing Functions
+
+| Method                | Description                                                      |
+|-----------------------|------------------------------------------------------------------|
+| `write(string)`       | Writes string to file                                            |
+| `writelines(lines)`   | Writes a list of strings to file (no automatic newlines)         |
+| `flush()`             | Forces writing of buffer to disk                                 |
+| `writable()`          | Returns `True` if file is open for writing                      |
+
+### 3. File Pointer (Position Control) Functions
+
+| Method                        | Description                                              |
+|-------------------------------|----------------------------------------------------------|
+| `seek(offset, whence=0)`      | Moves file pointer to a specified position               |
+| `tell()`                      | Returns the current position of the file pointer         |
+| `seekable()`                  | Returns `True` if file supports random access (seek/tell)|
+
+### 4. File Information / Property Methods
+
+| Method        | Description                                         |
+|---------------|-----------------------------------------------------|
+| `fileno()`    | Returns OS-level file descriptor (an integer)       |
+| `isatty()`    | Returns `True` if file is connected to a terminal   |
+
+### 5. File Management / Closing Functions
+
+| Method / Attribute | Description                        |
+|--------------------|------------------------------------|
+| `close()`          | Closes the file                    |
+| `closed`           | Returns `True` if file is closed   |
+
+### 6. File Object Attributes
+
+| Attribute  | Description                                         |
+|------------|-----------------------------------------------------|
+| `name`     | The name of the file                                |
+| `mode`     | The mode in which file is opened (e.g., `'r'`, `'w'`)|
+| `closed`   | Returns `True` if file is closed                    |
+
+### 7. Special Context Manager Methods (for `with` statement)
+
+| Method         | Description                                                        |
+|----------------|--------------------------------------------------------------------|
+| `__enter__()`  | Enters the runtime context and returns the file object             |
+| `__exit__()`   | Exits the runtime context and closes the file                      |

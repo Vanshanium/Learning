@@ -6,7 +6,10 @@ Todo: Things about loops and definations and all.
 
 ## Tokens
 
-Tokens are the smallest units of meaning in source code. They are generated during the lexical analysis phase of compilation or interpretation. Here are the common types of tokens found in most programming languages:
+![Tokens illustration](./Assets/Tokens.png)
+
+Tokens are the smallest meaningful elements in source code, identified during lexical analysis.
+
 
 ### 1. Keywords
 Reserved words with special meaning, such as:
@@ -64,7 +67,6 @@ Fixed values written directly in code:
 | Boolean     | `True`       | `true`     | `true`      | `true`         |
 | Null/None   | `None`       | `null`     | `nullptr`   | `null`         |
 s
-### 4. Operators
 ### 4. Operators
 
 Operators are symbols that perform operations on variables and values. Here’s a comparison of common operator types across Python, Java, C++, and JavaScript:
