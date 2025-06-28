@@ -1,0 +1,1 @@
+/dev - Cantains all the device related files, Like /dev/disk/by-id/ Have all the Devices in the system. 
