@@ -8,6 +8,14 @@ Linux systems use various tools to manage network connections. Two of the most c
 
 **Network Manager** is a dynamic network control and configuration daemon. It is designed for desktop and laptop environments, providing easy management of wired, wireless, VPN, and mobile broadband connections. It offers both graphical and command-line interfaces (`nmcli`, `nmtui`).
 
+```bash 
+nmcli // Network Manager. 
+nmcli device list 
+nmcli device wifi list 
+nmcli device wifi connect <SSID> --ask 
+```
+
+
 ### iwd and wpa_supplicant
 
 #### iwd (In my arch.)
