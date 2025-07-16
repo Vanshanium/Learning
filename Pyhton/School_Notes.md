@@ -16,17 +16,35 @@ A **token** is the smallest unit in Python source code, such as keywords, identi
 ``` 
 
 #### 2. Identifiers 
-Represents a unique name used to identify a variable, function, class, or other entity in code.
 ```python
     age = 10 
     name = "Ash"
     def greet():
         print("Hello",name)
 ```
-- The phrase "penile_size" and the sentence "with a {self.penile_size}. inch penis" in the OOP example are inappropriate for kids.
-- The repeated use of "Moron" in function examples may also be considered inappropriate language for children.
+**Rules for Identifiers in Python:**
 
-### Variables
+1. Identifiers cannot have special characters except the underscore (`_`).  
+2. Identifiers **cannot begin with a digit**.  
+3. Identifiers cannot be the same as a **keyword**.  
+4. Python is **case-sensitive**.  
+
+Convensions - 
+| Type     | Convention                     | Example                   |
+| -------- | ------------------------------ | ------------------------- |
+| Variable | lower\_case\_with\_underscores | `total_marks`, `is_valid` |
+| Constant | ALL\_CAPS                      | `PI = 3.14`               |
+| Function | snake\_case                    | `get_name()`              |
+| Class    | PascalCase                     | `StudentData`             |
+| Private  | Start with `_`                 | `_secret`                 |
+
+
+All Cases - 
+<p align="center">
+  <img src="./Reference_Images/TypeCases.png" alt="Type Cases" style="border-radius: 12px;">
+</p>
+
+##### Varibles:
 You know what are they, you just need `=` assignment operator, to assign variable.
 
 ```python 
@@ -39,7 +57,137 @@ You know what are they, you just need `=` assignment operator, to assign variabl
 
     x,y,z = 1,2,3 
     x = y = z = 1 
+```
+#### Literals 
+**Literals** are fixed values in Python source code, such as numbers, strings, booleans, or special values like `None`.
 
+`see it using type()` 
+
+<p align="center">
+  <img src="./Reference_Images/Literals.png" alt="Literals" style="border-radius: 12px;">
+</p>
+
+##### Strings 
+Strings in Python are sequences of Unicode characters, used to store and represent text.
+
+**Ways to define strings:**
+
+```python
+# Single quotes
+s1 = 'Hello'
+
+# Double quotes
+s2 = "World"
+
+# Triple single quotes (for multi-line)
+s3 = '''This is
+a multi-line
+string'''
+
+# Triple double quotes (for multi-line)
+s4 = """Another
+multi-line
+string"""
+
+# Raw strings (ignores escape sequences)
+path = r"C:\Users\Name\Documents"
+
+# f-strings (formatted string literals, Python 3.6+)
+name = "Alice"
+greeting = f"Hello, {name}!"
+
+# Concatenation
+combined = s1 + " " + s2
+
+# Repetition
+repeat = "ha" * 3  # 'hahaha'
+```
+
+**Escape Sequences:**
+
+| Sequence | Meaning          |
+|----------|------------------|
+| `\n`     | Newline          |
+| `\t`     | Tab              |
+| `\\`     | Backslash        |
+| `\'`     | Single quote     |
+| `\"`     | Double quote     |
+| `\r`     | Carriage return  |
+
+##### Numbers 
+Numbers in Python represent numeric data types and are used for mathematical operations. The main types are:
+
+- **int**: Represents integer (whole number) values. Example: `x = 10`
+- **float**: Represents floating-point (decimal) numbers. Example: `pi = 3.14`
+- **complex**: Represents complex numbers with real and imaginary parts. Example: `z = 2 + 3j`
+
+##### Booleans 
+Booleans in Python represent truth values and are used for logical operations and control flow.
+
+- There are only two boolean values: `True` and `False` (note the capital letters).
+- The `bool` type is a subclass of `int`, so `True` is equivalent to `1` and `False` is equivalent to `0`.
+
+```python
+x = 5
+print(x > 3)      # True
+print(x == 10)    # False
+print(not x < 2)  # True
+```
+
+**Truthy and Falsy Values:**
+- In Python, values are implicitly converted to `True` or `False` in a boolean context.
+- The following are considered **falsy** (evaluate to `False`):
+    - `None`
+    - `False`
+    - `0`, `0.0`, `0j`
+    - `''` (empty string)
+    - `[]` (empty list)
+    - `{}` (empty dict)
+    - `set()`, `tuple()`, etc.
+- All other values are **truthy** (evaluate to `True`).
+
+```python
+if []:
+        print("This won't print")
+if "hello":
+        print("This will print")
+```
+
+**Converting to Boolean:**
+- Use the `bool()` function to convert a value to its boolean equivalent.
+
+```python
+print(bool(0))        # False
+print(bool("abc"))    # True
+print(bool([]))       # False
+```
+
+TODO: 
+
+### Type Conversion
+
+Convert between types using built-in functions:
+
+```python
+int("10")      # 10
+float("3.14")  # 3.14
+complex(2, 3)  # (2+3j)
+```
+
+#### Collections 
+
+```python
+# Lists
+fruits = ["apple", "banana", "cherry"]  # List of strings
+
+# Tuples
+point = (1, 2)             # Immutable ordered data
+
+# Sets
+unique_nums = {1, 2, 3}    # Unordered, no duplicates
+
+# Dictionaries
+person = {"name": "Alice", "age": 25}  # Key-value pairs
 ```
 
 ### Operators:
@@ -111,22 +259,6 @@ Operate on bits (binary level).
 
 ---
 
-### Data Types
-
-```python
-# Lists
-fruits = ["apple", "banana", "cherry"]  # List of strings
-
-# Tuples
-point = (1, 2)             # Immutable ordered data
-
-# Sets
-unique_nums = {1, 2, 3}    # Unordered, no duplicates
-
-# Dictionaries
-person = {"name": "Alice", "age": 25}  # Key-value pairs
-```
-
 ---
 
 ## 3. Control Flow
@@ -176,12 +308,12 @@ namaste("Niko Bellic!")
 # Wrapper Functions - They are just the wrapper to the older functions 
 
 def greet(name):
-    print(f"{name} is a Moron!")
+    print(f"{name} is a Idiot!")
 
 def wrapper(func):
 
     def wrapped_greet(name):
-        print(f"You know who is the Moron!!!!")
+        print(f"You know who is the Idiot!!!!")
         func(name)
     return wrapped_greet                   
     # It Returns the defination of the function.
@@ -196,7 +328,7 @@ new_greet("Rahul")
 
 @wrapper
 def greet(name):
-    print(f"{name} is a Moron!")
+    print(f"{name} is a Idiot!")
 
 # Lambda Function - One Liner functions. (Syntax sex!)
 
@@ -204,9 +336,9 @@ def function_caller(func):
     func("Subhash")
 
 
-function_caller(lambda a : print(f"{a} is a Moron"))
+function_caller(lambda a : print(f"{a} is a Idiot"))
 
-# Same as new_name = lambda a : print(f"{a} is a Moron!")
+# Same as new_name = lambda a : print(f"{a} is a Idiot!")
 
 
 ```
@@ -230,12 +362,12 @@ class Person:
 
 class Man(Person):   # This is Inherited from the Person.
 
-    def __init__(self,name,age,penile_size):
+    def __init__(self,name,age,hieght):
         super().__init__(name,age)  # Calling from the Parent Class.
-        self.penile_size = penile_size
+        self.hieght = hieght
 
     def greet(self):                # You can overide the parent class functions
-        print(f"Hi, I'm {self.name} and I'm {self.age} years old with a {self.penile_size}. inch penis")
+        print(f"Hi, I'm {self.name} and I'm {self.age} years old with a {self.hieght}. inch hieght")
 
 
 # Create object
@@ -258,7 +390,9 @@ class Person:
 p = Person("Alice")
 print(p)  # Output: Person named Alice
 ```
-![Image](./Reference_Images/Dunder_Mathods.webp)
+<p align="center">
+  <img src="./Reference_Images/Dunder_Mathods.webp" alt="Image" style="border-radius: 12px;">
+</p>
 
 ---
 
@@ -346,7 +480,9 @@ my_file = open("/path/to/the/file","mode")
 
 All the modes: 
 
-![File Modes Reference](./Reference_Images/file_modes.webp)
+<p align="center">
+  <img src="./Reference_Images/file_modes.webp" alt="File Modes Reference" style="border-radius: 12px;">
+</p>
 
 ## Attributes and Methods: 
 
@@ -406,3 +542,4 @@ All the modes:
 |----------------|--------------------------------------------------------------------|
 | `__enter__()`  | Enters the runtime context and returns the file object             |
 | `__exit__()`   | Exits the runtime context and closes the file                      |
+
