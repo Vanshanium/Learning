@@ -127,72 +127,70 @@ Booleans in Python represent truth values and are used for logical operations an
 - There are only two boolean values: `True` and `False` (note the capital letters).
 - The `bool` type is a subclass of `int`, so `True` is equivalent to `1` and `False` is equivalent to `0`.
 
-```python
-x = 5
-print(x > 3)      # True
-print(x == 10)    # False
-print(not x < 2)  # True
-```
+##### None 
+**None** is a special constant in Python that represents the absence of a value or a null value.
 
-**Truthy and Falsy Values:**
-- In Python, values are implicitly converted to `True` or `False` in a boolean context.
-- The following are considered **falsy** (evaluate to `False`):
-    - `None`
-    - `False`
-    - `0`, `0.0`, `0j`
-    - `''` (empty string)
-    - `[]` (empty list)
-    - `{}` (empty dict)
-    - `set()`, `tuple()`, etc.
-- All other values are **truthy** (evaluate to `True`).
-
-```python
-if []:
-        print("This won't print")
-if "hello":
-        print("This will print")
-```
-
-**Converting to Boolean:**
-- Use the `bool()` function to convert a value to its boolean equivalent.
-
-```python
-print(bool(0))        # False
-print(bool("abc"))    # True
-print(bool([]))       # False
-```
-
-TODO: 
-
-### Type Conversion
-
-Convert between types using built-in functions:
-
-```python
-int("10")      # 10
-float("3.14")  # 3.14
-complex(2, 3)  # (2+3j)
-```
-
-#### Collections 
+##### Collections 
 
 ```python
 # Lists
-fruits = ["apple", "banana", "cherry"]  # List of strings
+fruits = ["apple", "banana", "cherry"]      # List of Data              Mutatable (Can be changed and can have same values)
 
 # Tuples
-point = (1, 2)             # Immutable ordered data
+point = (1, 2)                              # Immutable ordered data    
 
 # Sets
-unique_nums = {1, 2, 3}    # Unordered, no duplicates
+unique_nums = {1, 2, 3}                     # Unordered, no duplicates
 
 # Dictionaries
-person = {"name": "Alice", "age": 25}  # Key-value pairs
+person = {"name": "Alice", "age": 25}       # Key-value pairs
+```
+| Feature        | **List**            | **Tuple**         | **Set**          |
+| -------------- | ------------------- | ----------------- | ---------------- |
+| Ordered        | Yes                 | Yes               | No (Unordered)   |
+| Mutable        | Yes                 | No (Immutable)    | Yes              |
+| Duplicates     | Allowed             | Allowed           | Not Allowed      |
+| Brackets       | `[ ]`               | `( )`             | `{ }`            |
+| Use Case       | General collections | Fixed collections | Unique items     |
+
+Ordered : here orddered mean, that elements can be stored in any order possible. 
+so Indexing is not possinle in sets. 
+
+TODO: 
+
+###### Type Conversion
+Type conversion refers to changing the data type of a value to another type.
+
+1. Implicit Type Conversion
+
+Python automatically converts one data type itself
+```python
+x = 10      # int
+y = 2.5     # float
+result = x + y   # result is float (12.5)
 ```
 
-### Operators:
+2. Explicit Type Conversion (Type Casting)
 
-#### 1. Arithmetic Operators
+You can manually convert between types using built-in functions:
+
+```python
+int("10")
+float("3.14")
+str(100)
+complex(2, 3)
+bool(1)
+list("abc")
+tuple([1, 2, 3])
+set([1, 2, 2])
+dict([("a", 1), ("b", 2)])
+```
+
+#### Operators:
+
+##### 1. Arithmetic Operators
+
+Create a calculator using these operators 
 
 Used to perform mathematical operations.
 
@@ -206,7 +204,9 @@ Used to perform mathematical operations.
 | %        | Modulus (Remainder)     | 5 % 2 = 1       |
 | **       | Exponentiation          | 5 ** 2 = 25     |
 
-#### 2. Comparison (Relational) Operators
+##### 2. Comparison (Relational) Operators
+
+If and Else before this:
 
 Used to compare two values and return a boolean result.
 
@@ -256,8 +256,6 @@ Operate on bits (binary level).
 | ~        | NOT (invert)| ~5 = -6           |
 | <<       | Left Shift  | 5 << 1 = 10       |
 | >>       | Right Shift | 5 >> 1 = 2        |
-
----
 
 ---
 
