@@ -1,10 +1,10 @@
-marks = 89
+user_name = input("Enter your name: ")
+password = input("Enter your password: ")
 
-print("Marks:", marks>=90)
+correct_password = "12345"
 
-if marks >= 90:
-    print("if")
-elif marks >= 80:
-    print("elif")
+if user_name == "admin" and password == correct_password:
+    print("Welcome, admin!")
 else:
-    print("else")
+    print("Wrong username or password. Please try again.")
+

@@ -156,8 +156,6 @@ person = {"name": "Alice", "age": 25}       # Key-value pairs
 Ordered : here orddered mean, that elements can be stored in any order possible. 
 so Indexing is not possinle in sets. 
 
-TODO: 
-
 ###### Type Conversion
 Type conversion refers to changing the data type of a value to another type.
 
@@ -171,6 +169,8 @@ result = x + y   # result is float (12.5)
 ```
 
 2. Explicit Type Conversion (Type Casting)
+
+[Show Arthmetic Operator before this!]
 
 You can manually convert between types using built-in functions:
 
@@ -190,7 +190,7 @@ dict([("a", 1), ("b", 2)])
 
 ##### 1. Arithmetic Operators
 
-Create a calculator using these operators 
+[Create a calculator using these operators] 
 
 Used to perform mathematical operations.
 
@@ -206,7 +206,7 @@ Used to perform mathematical operations.
 
 ##### 2. Comparison (Relational) Operators
 
-If and Else before this:
+If and Else before this (using grade code)
 
 Used to compare two values and return a boolean result.
 
@@ -219,8 +219,9 @@ Used to compare two values and return a boolean result.
 | >=       | Greater than or equal to | 5 >= 2 → True        |
 | <=       | Less than or equal to    | 5 <= 2 → False       |
 
-#### 3. Logical Operators
+##### 3. Logical Operators
 
+[Use raining Example, login example or ]
 Used to combine conditional statements.
 
 | Operator | Meaning      | Example                          |
@@ -229,7 +230,7 @@ Used to combine conditional statements.
 | or       | Logical OR  | (5 < 2) or (5 < 10) → True       |
 | not      | Logical NOT | not (5 > 2) → False              |
 
-#### 4. Assignment Operators
+##### 4. Assignment Operators
 
 Used to assign values to variables.
 
@@ -244,7 +245,8 @@ Used to assign values to variables.
 | %=       | x %= 3     | x = x % 3      |
 | **=      | x **= 3    | x = x ** 3     |
 
-#### 5. Bitwise Operators
+
+##### 5. Bitwise Operators (Not in School)
 
 Operate on bits (binary level).
 
@@ -257,9 +259,35 @@ Operate on bits (binary level).
 | <<       | Left Shift  | 5 << 1 = 10       |
 | >>       | Right Shift | 5 >> 1 = 2        |
 
+##### 6. Membership Operators
+
+Membership operators are used to test whether a value is present in a sequence (such as a list, tuple, set, string, or dictionary).
+
+| Operator | Description                | Example                  |
+|----------|----------------------------|--------------------------|
+| `in`     | True if value is present   | `"apple" in fruits`      |
+| `not in` | True if value is not present| `"pear" not in fruits`   |
+
 ---
 
-## 3. Control Flow
+#### Seperators / Punctuations
+
+| Symbol   | Usage Example         | Meaning/Use                |
+|----------|----------------------|----------------------------|
+| `()`     | `print("Hi")`        | Parentheses (call/group)   |
+| `[]`     | `lst[0]`             | List, indexing             |
+| `{}`     | `{"a": 1}`           | Dict, set                  |
+| `:`      | `if x > 0:`          | Block start                |
+| `,`      | `x, y = 1, 2`        | Separator                  |
+| `.`      | `obj.name`           | Member access              |
+| `;`      | `a = 5; b = 6`       | Statement separator        |
+| `@`      | `@decorator`         | Decorator                  |
+| `=`      | `x = 10`             | Assignment                 |
+| `->`     | `def f() -> int:`    | Return type annotation     |
+| `...`    | `def f(...):`        | Ellipsis/placeholder       |
+
+
+### Control Flow
 
 ```python
 # Conditional statements
@@ -269,6 +297,7 @@ elif x == 5:
     print("x is 5")
 else:
     print("x is less than 5")
+
 
 # Loops
 for fruit in fruits:               # Iterate over list
@@ -290,7 +319,6 @@ def greet(name) -> str:
     # -> shows the return type! Its not Javascript relax
     
     print(f"Hello, {name}!")
-
     return f"Hello, {name}!"
 
 # Call the function
