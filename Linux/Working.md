@@ -48,6 +48,7 @@ Pacman is the package manager for Arch Linux. Here are some common commands:
 - **Clean the package cache:**
     ```bash
     sudo pacman -Sc
+    sudo pacman -Scc
     ```
 
     ## Understanding mirrorlist and Pacman’s Working
