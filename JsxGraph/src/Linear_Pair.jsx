@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import JSX from 'jsxgraph'
+import './Board.css';
 
-function Board() {
+function Linear_pair() {
 
     var point_color = '#f9598bff';
 
     var board_atr = {
         boundingbox: [-10, 10, 10, -10],
         axis: false,
-        showCopyright: false
+        showCopyright: false,
+        showFullscreen: true
     }
 
     var fix_atr = {
@@ -37,14 +39,25 @@ function Board() {
 
     var semi_line_atr = {
         strokeColor: '#f3537dff',
-        strokeWidth: 2,
+        strokeWidth: 3,
         dash: 4
     }
 
-    var angle_atr = {
+
+    var angle_color = '#ebb840ff';
+    var angle1_atr = {
         radius: 2,
-        strokeColor: '#49c9a7',
-        fillColor: '#49c9a7',
+        strokeColor: angle_color,
+        strokeWidth: 3,
+        fillColor: angle_color,
+    }
+
+    angle_color = '#53abf3ff';
+    var angle2_atr = {
+        radius: 1.7,
+        strokeColor: angle_color,
+        strokeWidth: 3,
+        fillColor: angle_color,
     }
 
 
@@ -59,20 +72,19 @@ function Board() {
         var line = board.create('line', [a, c], line_atr);
 
         var line_inter = board.create('line', [b, d], semi_line_atr);
-        var angle = board.create('angle', [c, b, d], angle_atr)
-        var angle = board.create('angle', [d, b, a], angle_atr)
-
-    })
+        var angle2 = board.create('angle', [d, b, a], angle1_atr)
+        var angle1 = board.create('angle', [c, b, d], angle2_atr)
+        var text = board.create('text', [-9, 9, 'Linear Pair Axiom'], {
+            fontSize: 20,
+            fontFamily: 'Arial',
+            color: '#ebb840ff'
+        })
+    }, [])
 
     return (
-        <div id="box" style={{
-            width: '700px',
-            height: '700px',
-            border: '1px solid black'
-        }}
-        ></div>
+        <div id="box" className="board-box"></div>
     )
 
 }
 
-export default Board;
+export default Linear_pair;

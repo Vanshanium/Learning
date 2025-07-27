@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import Board from './Board.jsx'
+import SSA from './SSA.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <Board />
+  <SSA />
 )
