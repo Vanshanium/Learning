@@ -299,13 +299,67 @@ else:
     print("x is less than 5")
 
 
-# Loops
-for fruit in fruits:               # Iterate over list
-    print(fruit)
+### Loops in Python
 
-while x > 0:                       # While loop
+Loops are used to execute a block of code repeatedly.
+
+#### 1. `for` Loop
+
+The `for` loop iterates over a sequence (like a list, tuple, string, or range).
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+```
+
+You can also use `range()` to loop a specific number of times:
+
+```python
+for i in range(5):    # 0, 1, 2, 3, 4
+    print(i)
+```
+
+#### 2. `while` Loop
+
+The `while` loop repeats as long as a condition is `True`.
+
+```python
+x = 3
+while x > 0:
     print(x)
     x -= 1
+```
+
+#### Loop Control Statements
+
+- `break`: Exit the loop immediately.
+- `continue`: Skip the rest of the current iteration and continue with the next.
+- `else`: Runs after the loop finishes normally (not by `break`).
+
+```python
+for num in range(5):
+    if num == 3:
+        break
+    print(num)
+else:
+    print("Loop finished!")  # Only prints if loop wasn't broken
+
+for num in range(5):
+    if num % 2 == 0:
+        continue
+    print(num)  # Prints only odd numbers
+```
+
+#### Nested Loops
+
+Loops can be nested inside each other.
+
+```python
+for i in range(2):
+    for j in range(3):
+        print(f"i={i}, j={j}")
 ```
 
 ---

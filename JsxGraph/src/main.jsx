@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import SSA from './SSA.jsx'
+import AAS from './AAS.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <SSA />
+  <AAS />
 )

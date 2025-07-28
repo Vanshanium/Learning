@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import JSX from 'jsxgraph'
 import './Board.css';
 
-function SSA() {
+function AAS() {
 
     var comp_color_1 = '#da416aff';
     var comp_color_2 = '#2790aaff';
@@ -70,14 +70,12 @@ function SSA() {
 
     var label_triangle = (poly, board) => {
 
-        for (let i = 0; i < poly.borders.length; i++) {
-            const side = poly.borders[i];
+        const side = poly.borders[2];
 
-            const midX = () => (side.point1.X() + side.point2.X()) / 2;
-            const midY = () => (side.point1.Y() + side.point2.Y()) / 2;
+        const midX = () => (side.point1.X() + side.point2.X()) / 2;
+        const midY = () => (side.point1.Y() + side.point2.Y()) / 2;
 
-            board.create('text', [midX, midY, () => { return side.L().toFixed(1); }], text_atr);
-        }
+        board.create('text', [midX, midY, () => { return side.L().toFixed(1); }], text_atr);
     }
 
     var congurency = (poly_1, poly_2) => {
@@ -111,38 +109,33 @@ function SSA() {
         var board = JXG.JSXGraph.initBoard('box', board_atr)
 
         // Triangle ABC
-        var a = board.create('point', [-7, -4], { ...points_atr, name: 'A' });
+        var a = board.create('point', [-5, -5], { ...points_atr, name: 'A', fixed: true });
 
-        var b = board.create('point', [-7, 3], { ...points_atr, name: 'B' });
+        var b = board.create('point', [-8, 1], { ...points_atr, name: 'B', fixed: true });
 
-        var cir_con = board.create('circle', [a, 5], { strokeWidth: 0, fillColor: 'none' });
-        var c = board.create('glider', [-4, 0, cir_con], points_atr);
+        var c = board.create('point', [-1, 1], { ...points_atr, name: 'C', });
 
         var Tri_ABC = board.create('polygon', [a, b, c], poly_atr);
 
         var Ang_ABC = board.create('angle', [a, b, c], angle_atr);
         Ang_ABC.setAttribute({ name: () => { return Ang_ABC.Value('degrees').toFixed(0); } });
 
-        var Ang_BCA = board.create('angle', [b, c, a], angle_atr);
-        Ang_BCA.setAttribute({ name: () => { return Ang_BCA.Value('degrees').toFixed(0); } });
-
-
         var Ang_CAB = board.create('angle', [c, a, b], angle_atr);
         Ang_CAB.setAttribute({ name: () => { return Ang_CAB.Value('degrees').toFixed(0); } });
-        Ang_CAB.setAngle(Math.PI / 6);
 
 
         // Triangle PQR
         var p = board.create('point', [() => { return a.X() + 10 }, () => { return a.Y() + 0 }], { ...points_atr_2, name: 'P' });
         var q = board.create('point', [() => { return b.X() + 10 }, () => { return b.Y() + 0 }], { ...points_atr_2, name: 'Q' });
-        var cir_con_2 = board.create('circle', [p, 5], { strokeWidth: 0, fillColor: 'none' });
-        var r = board.create('glider', [6, 0, cir_con_2], { ...points_atr_2, name: 'R' });
+        var r = board.create('point', [() => { return c.X() + 10 }, () => { return c.Y() + 0 },], { ...points_atr_2, name: 'R' });
 
         var Tri_PQR = board.create('polygon', [p, q, r], poly_atr_2);
 
         var Ang_PQR = board.create('angle', [p, q, r], angle_atr_2);
         Ang_PQR.setAttribute({ name: () => { return Ang_PQR.Value('degrees').toFixed(0); } });
 
+        var Ang_RPQ = board.create('angle', [r, p, q], angle_atr_2);
+        Ang_RPQ.setAttribute({ name: () => { return Ang_RPQ.Value('degrees').toFixed(0); } });
 
         label_triangle(Tri_ABC, board);
         label_triangle(Tri_PQR, board);
@@ -158,7 +151,7 @@ function SSA() {
         <>
             <h1>
                 <span>Congurency Rule : </span>
-                <span id="Rule">SAS (Side Angle Side)</span>
+                <span id="Rule">AAS (Angle Angle Side)</span>
             </h1>
             <div id="box" className="board-box"></div>
         </>
@@ -166,4 +159,4 @@ function SSA() {
 
 }
 
-export default SSA;
+export default AAS;
