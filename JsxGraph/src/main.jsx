@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import AAS from './AAS.jsx'
+import Trigonometry from './Trigonometry.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <AAS />
+  <Trigonometry />
 )

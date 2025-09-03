@@ -8,7 +8,7 @@ import Triangles from './Congurence/Triangles.jsx';
 
 function Congurence() {
     return (
-        <SSS />
+        <AAA />
     );
 }
 

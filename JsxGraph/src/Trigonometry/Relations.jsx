@@ -9,7 +9,6 @@ function Relations() {
 
     var board_atr = {
         boundingbox: [-10, 5, 10, -10],
-        // axis: true,
         keepAspectRatio: false,
         showCopyright: false,
         showFullscreen: true
@@ -44,16 +43,17 @@ function Relations() {
 
 
     var text_atr = {
-        fontSize: 15,
+        fontSize: 30,
         // fontFamily: 'hurmit',
         // fontWeight: 'bold',
         strokeColor: '#35363aff',
     }
 
     var text_atr_2 = {
-        fontSize: 30,
-        strokeColor: comp_color_2,
+        fontSize: 32,
+        strokeColor: '#35363aff',
     }
+
     var label_triangle = (poly, board) => {
 
         for (let i = 0; i < poly.borders.length; i++) {
@@ -105,9 +105,24 @@ function Relations() {
             return `Sin(${Ang_CAB.Value('degrees').toFixed(0)}°) = ${BC.L().toFixed(2)} / ${AB.L().toFixed(2)} = ${(BC.L() / AB.L()).toFixed(2)}`;
         };
 
-        var ab = board.create('text', [0, 0, 'AB'], text_atr_2)
 
-        var sine = board.create('text', [0, 4, getSin], text_atr_2);
+        // This is Garbage code, but it works
+        // I will fix it later
+
+        var vinculum = board.create('line', [[3.9, -1.35], [6.5, -1.35]], { strokeColor: comp_color_2, strokeWidth: 4, straightFirst: false, straightLast: false });
+        var vinculum = board.create('line', [[3.9, -3.35], [6.5, -3.35]], { strokeColor: comp_color_2, strokeWidth: 4, straightFirst: false, straightLast: false });
+        var tan_vinculum = board.create('line', [[3.9, -5.35], [6.5, -5.35]], { strokeColor: comp_color_2, strokeWidth: 4, straightFirst: false, straightLast: false });
+
+        var sine = board.create('text', [1, -1, () => `Sin(${Ang_CAB.Value('degrees').toFixed(0)}°) = BC = ${BC.L().toFixed(2)} = ${(BC.L() / AB.L()).toFixed(2)}`], text_atr_2);
+        var sine_deno = board.create('text', [3.9, -1.7, () => `AB \u00A0\u00A0${AB.L().toFixed(2)}`], text_atr_2);
+
+
+        var cosine = board.create('text', [1, -3, () => `Cos(${Ang_CAB.Value('degrees').toFixed(0)}°) = AC = ${AC.L().toFixed(2)} = ${(AC.L() / AB.L()).toFixed(2)}`], text_atr_2);
+        var cosine_deno = board.create('text', [3.9, -3.7, () => `AB \u00A0\u00A0${AB.L().toFixed(2)}`], text_atr_2);
+
+
+        var tan = board.create('text', [1, -5, () => `Tan(${Ang_CAB.Value('degrees').toFixed(0)}°) = BC = ${BC.L().toFixed(2)} = ${(BC.L() / AC.L()).toFixed(2)}`], text_atr_2);
+        var tan_deno = board.create('text', [3.9, -5.7, () => `AC \u00A0\u00A0${AC.L().toFixed(2)}`], text_atr_2);
 
     }, [])
 

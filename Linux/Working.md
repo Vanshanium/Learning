@@ -89,6 +89,10 @@ Pacman is the package manager for Arch Linux. Here are some common commands:
     **Tip:** Keeping your mirrorlist updated and using reliable mirrors helps avoid slow downloads and package errors.
 
 
+    ### Pacman Commands : 
+    - sudo pacman -S <Package> // Installs a Package
+    - sudo pacman -R <Package> // Remove the package with all the dependencies
+    - sudo pacman -Qi <Package>
 ## Network Services in Linux
 
 Linux systems use various tools to manage network connections. Two of the most common are **Network Manager** and **systemd-networkd**, but there are other alternatives as well.
