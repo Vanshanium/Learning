@@ -101,6 +101,24 @@ Linux systems use various tools to manage network connections. Two of the most c
 
 **Network Manager** is a dynamic network control and configuration daemon. It is designed for desktop and laptop environments, providing easy management of wired, wireless, VPN, and mobile broadband connections. It offers both graphical and command-line interfaces (`nmcli`, `nmtui`).
 
+```bash
+In case you delete everything, connect the ethernet and use 
+
+ip link # This will show all the network cards 
+ip link set <card Name> up # To set it up
+
+# Now You need a IP address 
+# Get dhcpcd from the arch website
+
+sudo dhcpcd <card Name>
+
+# Now you are on Ethernet.
+
+sudo pacman -S NetworkManager
+
+```
+
+
 ```bash 
 nmcli // Network Manager. 
 nmcli device list 
@@ -111,11 +129,11 @@ nmcli device wifi connect <SSID> --ask
 
 ### iwd and wpa_supplicant
 
-#### iwd (In my arch.)
+#### iwd 
 
 **iwd** (iNet wireless daemon) is a modern wireless management daemon developed by Intel. It aims to replace older tools like wpa_supplicant, focusing on simplicity, performance, and minimal dependencies. iwd is commonly used on systems where lightweight and efficient Wi-Fi management is desired, such as embedded devices and minimalist distributions. It can be used standalone or integrated with Network Manager.
 
-#### wpa_supplicant
+#### wpa_supplicant (Moved to this.)
 
 **wpa_supplicant** is a widely-used backend service for managing wireless networks on Linux. It handles authentication and encryption for Wi-Fi connections, supporting WPA, WPA2, and WPA3 standards. Many network management tools, including Network Manager and systemd-networkd, rely on wpa_supplicant to handle the low-level details of wireless connectivity.
 
